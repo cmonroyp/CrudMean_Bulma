@@ -1,0 +1,29 @@
+.pn-addStudent{
+    width: 60%;
+    position: fixed
+}
+.frmStudent{
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.frmStudent:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+}
+
+.pnl-addStudent{
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card-Student{
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.notification{
+    margin-top: 350px;position: fixed
+}

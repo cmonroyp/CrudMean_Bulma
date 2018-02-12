@@ -1,0 +1,39 @@
+<div class="section"></div>
+<div class="container" *ngIf="alumnos.length >= 1" style="overflow-x:auto;">
+  <table class="card table is-striped center-table" align="center">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        <th>Facultad</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let alumno of alumnos;let i=index">
+        <td>{{alumno.nombre}}</td>
+        <td>{{alumno.apellido}}</td>
+        <td>{{alumno.email}}</td>
+        <td>{{alumno.facultad['nombre']}}</td>
+        <td><a [routerLink]="['/edit_student',alumno._id]"><span class="icon has-text-success"><i class="fas fa-lg fa-edit"></i>
+        </span></a></td>
+        <td><a (click)="open_modal(alumno,i)"><span class="icon has-text-danger"><i class="fas fa-lg fa-trash"></i></span></a></td>
+      </tr>
+    </tbody>
+
+    <div style="padding: 10px">
+
+      <nav class="pagination is-rounded" role="navigation" aria-label="pagination">
+        <a class="pagination-previous" [routerLink]="['/administracion',prev_page]">Previous</a>
+        <a class="pagination-next" [routerLink]="['/administracion',next_page]">Next page</a>
+      </nav>
+  
+    </div>
+        <p class="control has-text-centered">
+            Total Registros: <strong class="has-text-primary">{{total_items}}</strong>
+        </p>
+  </table>
+</div> 
