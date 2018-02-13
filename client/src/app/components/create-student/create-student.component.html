@@ -9,9 +9,9 @@
               <div class="columns is-mobile">
                   <div class="column is-4 is-offset-2">
                       <div class="field">   
-                          <label class="label has-text-grey-light" data-error="wrong" data-success="right">Nombre</label>
+                          <label class="label has-text-grey" data-error="wrong" data-success="right">Nombre</label>
                           <div class="control has-icon">
-                            <input class="input is-info" type="text" placeholder="Nombre"
+                            <input class="input is-primary" type="text" placeholder="Nombre"
                                     [(ngModel)]="alumno.nombre"
                                     name="nombre"
                                     #nombre="ngModel"
@@ -26,9 +26,9 @@
 
                   <div class="column is-4">
                       <div class="field">
-                          <label class="label has-text-grey-light">Apellido</label>
+                          <label class="label has-text-grey">Apellido</label>
                           <div class="control has-icon">
-                            <input class="input is-info" type="text" placeholder="Apellido"
+                            <input class="input is-primary" type="text" placeholder="Apellido"
                                     [(ngModel)]="alumno.apellido"
                                     name="apellido"
                                     #apellido="ngModel"
@@ -45,9 +45,9 @@
                 <div class="columns is-mobile">
                     <div class="column is-4 is-offset-2">
                         <div class="field">
-                            <label class="label has-text-grey-light">Email</label>
+                            <label class="label has-text-grey">Email</label>
                             <div class="control has-icon">
-                              <input class="input is-info" type="email" placeholder="Email"
+                              <input class="input is-primary" type="email" placeholder="Email"
                                      [(ngModel)]="alumno.email"
                                      name="email"
                                      #email="ngModel"
@@ -63,9 +63,9 @@
                     </div>
                     <div class="column is-4">
                         <div class="field">
-                            <label class="label has-text-grey-light">Password</label>
+                            <label class="label has-text-grey">Password</label>
                             <div class="control has-icon">
-                              <input class="input is-info" type="password" placeholder="Password"
+                              <input class="input is-primary" type="password" placeholder="Password"
                                      [(ngModel)]="alumno.password"
                                      name="password"
                                      #password="ngModel"
@@ -83,7 +83,7 @@
                     <div class="column is-4 is-offset-4">
                         <div class="field">
                             <div class="control has-icons-left">
-                              <div class="select is-info">
+                              <div class="select is-primary">
                                   <select [(ngModel)]="alumno.facultad" name="alumno.facultad"
                                             #facultad="ngModel"
                                             required>

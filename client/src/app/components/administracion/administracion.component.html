@@ -36,4 +36,33 @@
             Total Registros: <strong class="has-text-primary">{{total_items}}</strong>
         </p>
   </table>
+
+  <div class="modal is-active" *ngIf="showModal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+
+      <header class="modal-card-head">
+        <p class="modal-card-title has-text-centered">Eliminar Alumno</p>
+        <button class="delete" aria-label="close" (click)="closeModal()"></button>
+      </header>
+
+      <section class="modal-card-body has-text-centered">
+        <p>Desea eliminar el alumno <strong>{{alumno.nombre}} {{alumno.apellido}}</strong>?. </p>
+      </section>
+
+      <footer class="modal-card-foot">
+
+            <div class="control">
+              <button type="submit" class="button is-success is-rounded" (click)="delete_alumno(alumno._id)">
+                    <span class="icon is-small">
+                            <i class="fas fa-check"></i>
+                    </span>
+                    <span>Aceptar</span>
+              </button>
+            </div>
+
+      </footer>
+    </div>
+  </div>
+
 </div> 

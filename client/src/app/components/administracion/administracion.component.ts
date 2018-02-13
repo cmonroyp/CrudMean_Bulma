@@ -21,6 +21,7 @@ export class AdministracionComponent implements OnInit {
   public count_alumnos: number;//muestra el total de alumnos encontrados por paginado.
   public total_pages:number;
   public alumno_por_pagina = 4;//este limite esta configurado en el controlador alumno.controller
+  public showModal:boolean = false;
 
   constructor(private _alumnoService: AlumnoService,
               private _route: ActivatedRoute) {
@@ -41,7 +42,7 @@ export class AdministracionComponent implements OnInit {
    
     this._route.params.forEach((params:Params)=>{
     
-      let page = 1 //+params['page'];//concatena el numero de pagina a los parametros a enviar     
+      let page = +params['page'];//concatena el numero de pagina a los parametros a enviar     
 
       if(!page){
         page = 1;
@@ -75,6 +76,28 @@ export class AdministracionComponent implements OnInit {
           //Materialize.toast('Error en la Consulta', 3000, 'red rounded')
         })
       });
+   }
+
+   open_modal(alumno, index){
+      //muestra modal
+      this.showModal = true;
+
+      this.alumno.nombre = alumno.nombre;
+      this.alumno.apellido = alumno.apellido;
+      this.alumno._id = alumno._id;
+
+      console.log(alumno);
+      console.log(index);
+   }
+
+   closeModal(){
+    this.showModal = false;
+   }
+
+   delete_alumno(alumn_id){
+     console.log('llego')
+     console.log(alumn_id);
+     this.closeModal();
    }
 
 }
