@@ -8,12 +8,14 @@ var md_auth = require('../middlewares/authenticated');
 
 var api = express.Router();
 
-api.get('/get_alumno/:id',md_auth.ensureAuth,AlumnoController.getAlumno);
+// api.get('/get_alumno/:id',md_auth.ensureAuth,AlumnoController.getAlumno);
+api.get('/get_alumno/:id',AlumnoController.getAlumno);
 // api.get('/get_alumnos/:page?',md_auth.ensureAuth,AlumnoController.getAlumnos);
 api.get('/get_alumnos/:page?',AlumnoController.getAlumnos);
 api.post('/agregar_alumno',AlumnoController.addAlumno);
 api.post('/login',AlumnoController.loginAlumno);
-api.put('/update_alumno/:id',md_auth.ensureAuth,AlumnoController.updateAlumno);
+// api.put('/update_alumno/:id',md_auth.ensureAuth,AlumnoController.updateAlumno);
+api.put('/update_alumno/:id',AlumnoController.updateAlumno);
 api.delete('/delete_alumno/:id',md_auth.ensureAuth,AlumnoController.delete_alumno);
 
 module.exports = api;

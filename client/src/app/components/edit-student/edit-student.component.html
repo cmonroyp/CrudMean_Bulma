@@ -1,0 +1,123 @@
+<!-- <div class="section"></div> -->
+<div class="columns is-mobile is-centered" style="padding-top:50px">
+  <div class="panel pn-addStudent frmStudent">
+      <div class="panel-heading has-text-centered has-text-weight-bold pnl-addStudent">
+          Editar Estudiante
+      </div>
+      <div class="panel-block">
+          <form class="control" #addStudent="ngForm" (ngSubmit)="onSubmit()" novalidate="">
+              <div class="columns is-mobile">
+                  <div class="column is-4 is-offset-2">
+                      <div class="field">   
+                          <label class="label has-text-grey" data-error="wrong" data-success="right">Nombre</label>
+                          <div class="control has-icon">
+                            <input class="input is-primary" type="text" placeholder="Nombre"
+                                    [(ngModel)]="alumno.nombre"
+                                    name="nombre"
+                                    #nombre="ngModel"
+                                    required>
+                            <span class="icon is-small">
+                                <i class="fa fa-user"></i>
+                            </span>
+                          </div>
+                          <p class="help is-danger" *ngIf="nombre.errors && nombre.touched">El nombre es Requerido!.</p>
+                     </div>
+                  </div>
+
+                  <div class="column is-4">
+                      <div class="field">
+                          <label class="label has-text-grey">Apellido</label>
+                          <div class="control has-icon">
+                            <input class="input is-primary" type="text" placeholder="Apellido"
+                                    [(ngModel)]="alumno.apellido"
+                                    name="apellido"
+                                    #apellido="ngModel"
+                                    required>
+                            <span class="icon is-small">
+                                <i class="fa fa-user"></i>
+                            </span>
+                          </div>
+                          <p class="help is-danger" *ngIf="apellido.errors && apellido.touched">Apellido Obligatorio!.</p>
+                        </div>
+                  </div>
+                </div>
+
+                <div class="columns is-mobile">
+                    <div class="column is-4 is-offset-2">
+                        <div class="field">
+                            <label class="label has-text-grey">Email</label>
+                            <div class="control has-icon">
+                              <input class="input is-primary" type="email" placeholder="Email"
+                                     [(ngModel)]="alumno.email"
+                                     name="email"
+                                     #email="ngModel"
+                                     pattern="{{patternEmail}}"
+                                     required>
+                              <span class="icon is-small">
+                                  <i class="fa fa-envelope"></i>
+                              </span>
+                            </div>
+                            <p class="help is-danger" *ngIf="email.errors?.required && email.touched">Email Obligatorio!.</p>
+                            <p class="help is-danger" *ngIf="email.errors?.pattern">El campo no tiene formato de correo</p>
+                          </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="field">
+                            <label class="label has-text-grey">Password</label>
+                            <div class="control has-icon">
+                              <input class="input is-primary" type="password" placeholder="Password"
+                                     [(ngModel)]="alumno.password"
+                                     name="password"
+                                     #password="ngModel"
+                                     required disabled>
+                              <span class="icon is-small">
+                                  <i class="fa fa-lock"></i>
+                              </span>
+                            </div>
+                            <p class="help is-danger" *ngIf="password.errors && password.touched">Password Obligatorio!.</p>
+                          </div>
+                    </div>
+                </div>
+
+                <div class="columns is-mobile">
+                    <div class="column is-4 is-offset-4">
+                        <div class="field">
+                            <div class="control has-icons-left">
+                              <div class="select is-primary">
+                                  <select [(ngModel)]="alumno.facultad" name="alumno.facultad"
+                                            #facultad="ngModel"
+                                            required>
+                                  <option value="" disabled selected>Seleccione Facultad</option>
+                                  <option *ngFor="let item of facultades" [value]="item._id">{{item.nombre}}</option>
+                                </select>
+                              </div>
+                              <div class="icon is-small is-left">
+                                  <i class="fas fa-university"></i>
+                              </div>
+                            </div>
+                        </div>          
+                    </div>
+                </div>   
+
+                  <div class="control has-text-centered">
+                      <button type="submit" class="button is-dark is-rounded" [disabled]="!addStudent.form.valid">
+                            <span class="icon is-small">
+                                    <i class="fas fa-check"></i>
+                            </span>
+                            <span>Aceptar</span>
+                      </button>
+                  </div>
+          </form>
+      </div>
+    </div>
+    
+  </div>
+      <article class="message is-success column is-6 is-offset-3" *ngIf="!message" style="padding-top:340px;">
+          <div class="message-header">
+            <p>Success</p>
+            <button class="delete" aria-label="delete"></button>
+          </div>
+          <div class="message-body has-text-centered" >
+             el usuario<strong> Pellentesque risus mi </strong> se actualizo correctamente!.
+          </div>
+       </article> 

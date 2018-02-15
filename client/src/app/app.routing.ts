@@ -11,7 +11,7 @@ import { CreateStudentComponent } from './components/create-student/create-stude
 //Administracion
 import { AdministracionComponent } from './components/administracion/administracion.component';
 //Editar
-// import { EditStudentComponent } from '../components/edit-student/edit-student.component';
+ import { EditStudentComponent } from './components/edit-student/edit-student.component';
 //Home 
 // import { HomeComponent } from '../components/home/home.component';
 
@@ -22,7 +22,7 @@ const APP_ROUTE: Routes =[
     {path:'crear-alumno', component: CreateStudentComponent},
     {path:'administracion', component: AdministracionComponent},
     {path:'administracion/:page', component: AdministracionComponent},
-    // {path:'edit_student/:id', component: EditStudentComponent},
+    {path:'edit_student/:id', component: EditStudentComponent},
     {path: '**', pathMatch: "full", redirectTo: "home"}
 ]
 

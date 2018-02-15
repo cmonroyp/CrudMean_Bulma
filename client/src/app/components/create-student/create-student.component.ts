@@ -20,7 +20,7 @@ export class CreateStudentComponent implements OnInit {
   public selectedFacultad;
   public patternEmail:string = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
   public messageEmail:string;
-
+  
   constructor(private _facultadService: FacultadService,
               private _alumnoService: AlumnoService) {
       

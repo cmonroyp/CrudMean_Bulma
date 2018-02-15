@@ -16,6 +16,7 @@ import { APP_ROUTING } from './app.routing';
 import { FacultadService } from './services/facultad.service';
 import { AlumnoService } from './services/alumno.service';
 import { AdministracionComponent } from './components/administracion/administracion.component';
+import { EditStudentComponent } from './components/edit-student/edit-student.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { AdministracionComponent } from './components/administracion/administrac
     AppComponent,
     CreateStudentComponent,
     NavComponent,
-    AdministracionComponent
+    AdministracionComponent,
+    EditStudentComponent
   ],
   imports: [
     BrowserModule,

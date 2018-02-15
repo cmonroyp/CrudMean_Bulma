@@ -7,12 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
+  public showMenu:boolean = false;
   constructor() { }
 
   ngOnInit() {
   }
 
-  pruebamenu(){
-    console.log('pulso menu')
+  openMenu(){
+    //menuburger
+    this.showMenu = !this.showMenu;
   }
 }
