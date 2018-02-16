@@ -17,6 +17,7 @@ import { FacultadService } from './services/facultad.service';
 import { AlumnoService } from './services/alumno.service';
 import { AdministracionComponent } from './components/administracion/administracion.component';
 import { EditStudentComponent } from './components/edit-student/edit-student.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -25,11 +26,12 @@ import { EditStudentComponent } from './components/edit-student/edit-student.com
     CreateStudentComponent,
     NavComponent,
     AdministracionComponent,
-    EditStudentComponent
+    EditStudentComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    FormsModule, 
     HttpClientModule,
     APP_ROUTING
   ],

@@ -1,5 +1,5 @@
 .pn-addStudent{
-    width: 60%;
+    width: 40%;
     position: fixed
 }
 .frmStudent{
@@ -21,8 +21,4 @@
     background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-}
-
-.notification{
-    margin-top: 400px;position: fixed
 }

@@ -12,18 +12,18 @@ import { CreateStudentComponent } from './components/create-student/create-stude
 import { AdministracionComponent } from './components/administracion/administracion.component';
 //Editar
  import { EditStudentComponent } from './components/edit-student/edit-student.component';
-//Home 
-// import { HomeComponent } from '../components/home/home.component';
+ //Login
+ import { LoginComponent } from './components/login/login.component';
 
 
 const APP_ROUTE: Routes =[
-    // {path:'home', component: HomeComponent},
-    // {path:'', component: MenuComponent},
+    {path:'login', component: LoginComponent},
+    {path:'', component: LoginComponent},
     {path:'crear-alumno', component: CreateStudentComponent},
     {path:'administracion', component: AdministracionComponent},
     {path:'administracion/:page', component: AdministracionComponent},
     {path:'edit_student/:id', component: EditStudentComponent},
-    {path: '**', pathMatch: "full", redirectTo: "home"}
+    {path: '**', pathMatch: "full", redirectTo: "login"}
 ]
 
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTE);

@@ -1,0 +1,73 @@
+<div class="section"></div>
+<div class="columns is-mobile is-centered" style="padding-top:50px">
+  <div class="panel pn-addStudent frmStudent">
+      <div class="panel-heading has-text-centered has-text-weight-bold pnl-addStudent">
+        <span class="icon has-text-success">
+          <i class="fas fa-key"></i>
+        </span>
+        Login
+      </div>
+      <div class="panel-block">
+          <form class="control" #loginStudent="ngForm" (ngSubmit)="onSubmit()" novalidate="">
+ 
+                <div class="columns is-mobile">
+                    <div class="column is-8 is-offset-2">
+                        <div class="field">
+                            <label class="label has-text-grey">Email</label>
+                            <div class="control has-icon">
+                              <input class="input is-primary" type="email" placeholder="Email"
+                                     [(ngModel)]="alumno.email"
+                                     name="email"
+                                     #email="ngModel"
+                                     pattern="{{patternEmail}}"
+                                     required>
+                              <span class="icon is-small">
+                                  <i class="fa fa-envelope"></i>
+                              </span>
+                            </div>
+                            <p class="help is-danger" *ngIf="email?.errors?.required && email.touched">Email Obligatorio!.</p>
+                            <p class="help is-danger" *ngIf="email?.errors?.pattern">El campo no tiene formato de correo</p>
+                          </div>
+                     </div>
+                  </div>
+
+                  <div class="columns is-mobile">
+                    <div class="column is-8 is-offset-2">
+                        <div class="field">
+                            <label class="label has-text-grey">Password</label>
+                            <div class="control has-icon">
+                              <input class="input is-primary" type="password" placeholder="Password"
+                                     [(ngModel)]="alumno.password"
+                                     name="password"
+                                     #password="ngModel"
+                                     required>
+                              <span class="icon is-small">
+                                  <i class="fa fa-lock"></i>
+                              </span>
+                            </div>
+                            <p class="help is-danger" *ngIf="password?.errors?.required && password.touched">Password Obligatorio!.</p>
+                          </div>
+                    </div>
+                </div>    
+
+                  <div class="control has-text-centered">
+                      <button type="submit" class="button is-dark is-rounded" [disabled]="!loginStudent.form.valid">
+                            <span class="icon is-small">
+                                    <i class="fas fa-check"></i>
+                            </span>
+                            <span>Aceptar</span>
+                      </button>
+                  </div>
+          </form>
+        </div>
+        <div class="control has-text-right">
+          <div>
+            <div>
+                <a [routerLink]="['/crear-alumno']">Create Account</a>
+            </div>
+          </div>
+      </div>
+      </div>
+      
+    </div>
+

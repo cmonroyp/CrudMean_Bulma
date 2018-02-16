@@ -20,7 +20,7 @@ export class EditStudentComponent implements OnInit {
   public alumno: Alumno;
   public facultades: Array<any>=[];
   public token;
-  public message: string;
+  public message: Alumno;
   public patternEmail:string = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
   
   constructor(private _route: ActivatedRoute,
@@ -34,7 +34,7 @@ export class EditStudentComponent implements OnInit {
                }
       
   ngOnInit() {
-    //this.token = this._alumnoService.getToken();
+    this.token = this._alumnoService.getToken();
     this.get_alumno();
     this.getFacultades();
   }
@@ -66,15 +66,14 @@ export class EditStudentComponent implements OnInit {
         .subscribe((res:any)=>{
           console.log('usuario antiguo',res.alumno);
           console.log('usuario nuevo',res.alumno_new)
-          //Materialize.toast('Usuario Actualizado Correctamente!.', 2000, 'green rounded')
-
+          this.message = res.alumno_new;
+ 
           setTimeout(() => {
             this._location.back();
           }, 2500);
         },
         (err)=>{
           console.log('Error en la Actualizacion',err);
-          //Materialize.toast('Error en la actualizacion del usuario!.', 3000, 'red rounded')
         })
 
   }

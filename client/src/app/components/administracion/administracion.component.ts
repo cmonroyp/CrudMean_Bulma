@@ -95,9 +95,17 @@ export class AdministracionComponent implements OnInit {
    }
 
    delete_alumno(alumn_id){
-     console.log('llego')
-     console.log(alumn_id);
-     this.closeModal();
+    this._alumnoService.delete_alumno(alumn_id, this.token)
+    .subscribe((res:any)=>{
+      console.log('Alumno Eliminado', res.alumno);
+      this.closeModal();
+      //Cargar Alumnos 
+      this.cargar_datos();
+    },
+    (err)=>{
+      console.log('Error en la Eliminacion', err);
+    })
+     
    }
 
 }

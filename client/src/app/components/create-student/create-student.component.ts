@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms'
+import { NgForm, Form } from '@angular/forms'
 //service 
 import { FacultadService } from '../../services/facultad.service';
 import { AlumnoService } from '../../services/alumno.service';
@@ -40,11 +40,15 @@ export class CreateStudentComponent implements OnInit {
         (err)=>console.log('Error en la Consulta', err))
   }
 
-  onSubmit(){    
+  onSubmit(forma:NgForm){  
+    
+    console.log(forma)
+
     console.log('estudiante',this.alumno);
     this._alumnoService.addAlumno(this.alumno)
         .subscribe((res:any)=>{
           this.messageEmail = res.alumno.email;
+          this.alumno = new Alumno('','','','','');
         },
         (err)=>console.log(err));
     

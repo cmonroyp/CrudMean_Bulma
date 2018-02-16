@@ -57,8 +57,8 @@
                                   <i class="fa fa-envelope"></i>
                               </span>
                             </div>
-                            <p class="help is-danger" *ngIf="email.errors?.required && email.touched">Email Obligatorio!.</p>
-                            <p class="help is-danger" *ngIf="email.errors?.pattern">El campo no tiene formato de correo</p>
+                            <p class="help is-danger" *ngIf="email?.errors?.required && email.touched">Email Obligatorio!.</p>
+                            <p class="help is-danger" *ngIf="email?.errors?.pattern">El campo no tiene formato de correo</p>
                           </div>
                     </div>
                     <div class="column is-4">
@@ -112,12 +112,12 @@
     </div>
     
   </div>
-      <article class="message is-success column is-6 is-offset-3" *ngIf="!message" style="padding-top:340px;">
+      <article class="message is-success column is-6 is-offset-3" *ngIf="message">
           <div class="message-header">
             <p>Success</p>
             <button class="delete" aria-label="delete"></button>
           </div>
           <div class="message-body has-text-centered" >
-             el usuario<strong> Pellentesque risus mi </strong> se actualizo correctamente!.
+             el usuario<strong> {{message.nombre}} {{message.apellido}} </strong> se actualizo correctamente!.
           </div>
        </article> 
