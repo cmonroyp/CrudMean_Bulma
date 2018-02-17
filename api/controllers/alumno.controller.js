@@ -112,6 +112,7 @@ function loginAlumno(req,res){
                 //Comparo el password enviado, con el del usuario encontrado
                 bcrypt.compare(password,findAlumno.password,(err,check)=>{
                     if(check){
+ 
                         //si viene gethash = true desde la url se genera un nuevo token.
                         if(params.gethash){
                             //se devuelve un token al alumno logueado en la aplicacion.
